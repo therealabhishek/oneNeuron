@@ -1,2 +1,2 @@
 # oneNeuron
-perceptron
+perceptron modular coding
