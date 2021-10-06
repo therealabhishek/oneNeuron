@@ -9,6 +9,16 @@ import logging
 plt.style.use("fivethirtyeight")
 
 def prepare_data(df):
+  """Used to saperate the dependent and independent features.
+
+  Args:
+      df (pd.Dataframe): [its a pandas dataframe]
+
+  Returns:    
+      [tuple]: [It returns a tuple of dependent and independent variable]
+  """
+
+
   X = df.drop("y", axis=1)
 
   y = df["y"]
@@ -16,6 +26,12 @@ def prepare_data(df):
   return X, y
 
 def save_model(model, filename):
+  """this method is used to save the trained model.
+
+  Args:
+      model (python object): trained model
+      filename (str): path to save the model
+  """
   model_dir = "models"
   os.makedirs(model_dir, exist_ok=True) # ONLY CREATE IF MODEL_DIR DOESN"T EXISTS
   filePath = os.path.join(model_dir, filename) # model/filename
